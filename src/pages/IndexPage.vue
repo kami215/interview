@@ -126,6 +126,18 @@ const tempData = ref({
 function handleClickOption(btn, data) {
   // ...
 }
+    handleClickOption() {
+      this.tempProduct = {};
+    handleClickOption(isNew, item) {
+      if (isNew) {
+        this.tempProduct = {};
+      } else {
+        this.tempProduct = { ...item };
+      }
+      this.isNew = isNew;
+      const productComponent = this.$refs.productModal;
+      productComponent.showModal();
+    },
 </script>
 
 <style lang="scss" scoped>
